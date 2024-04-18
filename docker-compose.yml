@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   rsshub:
-    image: "registry.cn-shenzhen.aliyuncs.com/rsshub:0.0.0.13.bb0b3a8"
+    image: "registry.cn-shenzhen.aliyuncs.com/rsshub:0.0.0.1.b105097"
     restart: unless-stopped
     environment:
       - DB_HOST=192.168.100.72

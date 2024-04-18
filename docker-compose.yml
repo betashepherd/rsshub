@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  rsshub:
+    image: "registry.cn-shenzhen.aliyuncs.com/rsshub:0.0.0.13.bb0b3a8"
+    restart: unless-stopped
+    environment:
+      - DB_HOST=192.168.100.72
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASS=123456
+      - DB_NAME=test
+      - TZ=Asia/Shanghai
+    networks:
+      - rsshub
+    volumes:
+      - ./dbs:/code/dbs
+      - ./logs:/code/logs
+    ports:
+      - "6800:6800"
+      - "5002:5002"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+networks:
+  rsshub:
+    driver: bridge

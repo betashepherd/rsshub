@@ -30,5 +30,6 @@ curl http://localhost:6800/schedule.json -d project=default -d spider=cnbeta
 
 http://localhost:5002
 
+default user/password: admin/123456
 
 ```
